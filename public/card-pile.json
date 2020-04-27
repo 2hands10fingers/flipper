@@ -1,0 +1,20 @@
+[
+  {
+    "title": "System Access Denied",
+    "description": "Your hacker's access to the camera systems is about to be denied. Your team will be exposed.",
+    "roll" : 20,
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
+  },
+  {
+    "title": "Tip-off",
+    "description": "A security guard's supcision has raised after something your con man has said",
+    "roll" : 15,
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
+  },{
+    "title": "Hostage Call",
+    "description": "A hostage is about to call 911. Muscle gains +2 roll result",
+    "roll" : 25,
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
+  }
+
+]
