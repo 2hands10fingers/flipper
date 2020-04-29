@@ -4,14 +4,10 @@ import CardAbstract from './compenents/Card/CardAbstract'
 import csvParser from 'csv-parse'
 
 
-// TODO: Create csv importer
-  // https://stackabuse.com/reading-and-writing-csv-files-with-node-js/
-
 /**
  * 1. CSV importation
  *  -- Eport import format from set settings
  * 2. Change integers to prototype without changing CSV
- * 3.
  */
 
  // 17 is greatest average
@@ -55,7 +51,6 @@ function App() {
           </form>
         </div>
         )}
-
       </Fragment>
     )
   }
@@ -76,7 +71,6 @@ function App() {
       </div>
     </div>
     </Fragment>
-
   );
 
 function csvUpload(e) {
@@ -96,17 +90,12 @@ function csvUpload(e) {
 
         output.push(record)
       }
-
-
-
-
-
     })
+    
     parser.on('end', () => {
       let pile = parseCSV(output)
+      
       shuffleCards(pile)
-
-
       setCardPile(pile)
     })
   }
@@ -161,7 +150,14 @@ function nextCardHandler() {
 }
 
 
-// async function getPile() {
+  function shuffleCards(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // async function getPile() {
 //     axios('card-pile.json')
 //       .then( ({data}) => {
 //         let pile = data
@@ -172,13 +168,6 @@ function nextCardHandler() {
 //       })
 //       .catch( e => console.log(e))
 //   }
-
-  function shuffleCards(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
 
 }
 
