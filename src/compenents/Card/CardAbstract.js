@@ -1,29 +1,27 @@
 import React from 'react'
 import "../../styles/card.sass"
+import Title from './CardAttributes/Title'
+import Image from './CardAttributes/Image'
+import Descrition from './CardAttributes/Description'
+import Type from './CardAttributes/Type'
+import Roll from './CardAttributes/Roll'
+
 
 export default function CardAbstract({card}) {
-  const {title, description, roll, image} = card
+  const {title, description, roll, image, type} = card
 
-  return ( <section id="card" className="card">
+  return (
 
+  <section id="card" className="card">
       {card && (
       <>
-      <div className="card--title">{title}</div>
-
-      <div className="card--pic-container">
-        <img src={image} alt={title} className="card--img" />
-      </div>
-
-      <div className="card--type">
-        <p>Situation</p>
-      </div>
-
-      <div className="card--description">
-        <p>{description}</p>
-      </div>
-
-      <div className="card--roll"><span>{roll}</span></div>
+      {title && <Title title={title}/>}
+      {image && <Image image={image} title={title} />}
+      {type && <Type type={type} />}
+      {description && (<Descrition description={description}/>)}
+      {roll && <Roll roll={roll}/>}
       </>
+
       )}
 
     </section>
