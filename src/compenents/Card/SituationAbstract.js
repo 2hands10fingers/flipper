@@ -5,7 +5,7 @@ import Descrition from './CardAttributes/Description'
 import Type from './CardAttributes/Type'
 import Roll from './CardAttributes/Roll'
 
-export default function HeroAbstract({card}) {
+export default function SituationAbstract({card}) {
   const {title, description, roll, image, type} = card
 
   return (

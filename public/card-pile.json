@@ -1,20 +1,128 @@
 [
   {
-    "title": "System Access Denied",
-    "description": "Your hacker's access to the camera systems is about to be denied. Your team will be exposed.",
-    "roll" : 20,
-    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
-  },
-  {
     "title": "Tip-off",
     "description": "A security guard's supcision has raised after something your con man has said",
-    "roll" : 15,
-    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
-  },{
-    "title": "Hostage Call",
-    "description": "A hostage is about to call 911. Muscle gains +2 roll result",
-    "roll" : 25,
-    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg"
+    "roll": "15",
+    "image": "https://investigativeacademy.com/wp-content/uploads/2018/11/What-are-the-Physical-Requirements-to-be-a-Security-Guard.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "System Access Denied",
+    "description": "Your hacker's access to the camera systems is about to be denied. Your team will be exposed. If hacker is not detained, hacker may choose to roll once more. If roll result is greater than 5, add result to team roll total.",
+    "roll": "20",
+    "image": "https://www.nimbleplanet.com/wp-content/uploads/2017/03/bank-cctv-systems.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Civilian Call",
+    "description": "A civilian is about to call 911. Muscle gains +2 to his or her roll result.",
+    "roll": "25",
+    "image": "https://i2.wp.com/clark.com/wp-content/uploads/2030/02/SwitchCellPhoneCarrier.jpg?fit=874%2C400&ssl=1",
+    "type": "Situation"
+  },
+  {
+    "title": "Hacker Offline",
+    "description": "Your hackerâs systems are acting up and need to reset. If hackerâs roll result is not greater than 5, hacker cannot will be able to participate in next situation. Add hackerâs rolls result to your risk pool.",
+    "roll": "15",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Cleanest Execution",
+    "description": "Your team has succesfully executed this round. Proceeed to the next round.",
+    "roll": "N/A",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "You Dirty Rat",
+    "description": "One of your auxiallary teammates has abanadoned the team and planning to leak information about the job. You'll need to shut him up for good. If your Mastermind is not out this round, he or she may roll 1 more dice roll, but will be out the next round.",
+    "roll": "30",
+    "image": "https://i.pinimg.com/originals/f4/72/d9/f472d9b0af3aec5c5ba8900e85f8587d.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Roll Camera",
+    "description": "Camera systems need their video feed replaced with fake footage to hide your movement.",
+    "roll": "20",
+    "image": "https://www.nimbleplanet.com/wp-content/uploads/2017/03/bank-cctv-systems.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Bank Alarm",
+    "description": "The alarm is ringing throughout the bank. Squelch it. Only Mastermind and Muscle may roll.",
+    "roll": "15",
+    "image": "https://goodschoolhunting.org/wp-content/uploads/2019/06/stopwatch-alarm.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Brawn vs. Brain",
+    "description": "Your Muscle is lost. If yout team roll result is under 10, you must undergo a new situation before moving to the next round.",
+    "roll": "15",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Take 'Em Out",
+    "description": "Security has started going after you. Time to tie the cops up. Your muscle will be out next round.",
+    "roll": "20",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Missing Equipment",
+    "description": "Needed equipment has gone missing. Mastermind cannot roll this round.",
+    "roll": "20",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Familiar Face",
+    "description": "Someone has recognized your con man.",
+    "roll": "15",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Trip and Fall",
+    "description": "Your muscle has tripped and fallen.",
+    "roll": "10",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Decoy Vault",
+    "description": "The bank's vaul you're trying to open turns out to be the wrong one.",
+    "roll": "30",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Don't Be A Hero",
+    "description": "Your auxiallary muscle has bit off more than he can chew rounding up civilians. They're planning to fight back.",
+    "roll": "20",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Civilian Intervention",
+    "description": "A civlian has detained your Mastermind and must sit out this round. He must roll a 5 or higher to play the next round.",
+    "roll": "25",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Hostage Situation",
+    "description": "The cops have surrounded the building, and you must trade hostages to buy time. You must draw another and complete a situation card after this one to proceed to the next round.",
+    "roll": "15",
+    "image": "http://images.clipartpanda.com/hostage-clipart-hostage-illustration-poor-32561485.jpg",
+    "type": "Situation"
+  },
+  {
+    "title": "Data Anonmaly",
+    "description": "ERROR",
+    "roll": "10",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2017/10/bank-job.jpg",
+    "type": "Situation"
   }
-
 ]

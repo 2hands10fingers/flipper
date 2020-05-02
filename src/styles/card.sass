@@ -1,14 +1,28 @@
-.App
+.Decks
+  display: flex
+  margin: 1rem
+
+.Deck
     display: flex
     justify-content: center
     flex-direction: column
     align-items: center
     background-color: #4f7b94
+    max-width: 50%
+    margin: 1rem
     &--no-cards
       text-align: center
       font-size: 5rem
       font-family: monospace
       margin: 15rem auto
+    &--tiled
+      flex-direction: row
+      flex-wrap: wrap
+      max-width: inherit
+      h2
+        text-align: center
+      .card
+        margin: 0.4rem
 
     &--choose-file-btn
       width: 0.1px
@@ -37,7 +51,7 @@
           color: deepskyblue
 
 
-    &--discard-button
+    &--button
       background-color: deepskyblue
       color: white
       font-weight: 600
