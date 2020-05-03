@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import "../../styles/card.sass"
 import HeroAbstract from './HeroAbstract'
 import SituationAbstract from './SituationAbstract'
@@ -12,8 +12,8 @@ export default function CardAbstract({ card }) {
   }
 
   return (
-    <section id="card" className={`card`}>
+    <Fragment>
       {card && type && (cards[type.toLowerCase()])}
-    </section>
+    </Fragment>
   )
 }

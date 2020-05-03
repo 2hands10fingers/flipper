@@ -6,15 +6,15 @@ import Type from './CardAttributes/Type'
 import Roll from './CardAttributes/Roll'
 
 export default function SituationAbstract({card}) {
-  const {title, description, roll, image, type} = card
+  const { title, description, roll, image, type } = card
 
   return (
-    <>
+    <section className={`card card--${type}` }>
       <Title title={title}/>
       <Image image={image} title={title} />
       <Type type={type} />
       <Descrition description={description}/>
       <Roll roll={roll}/>
-    </>
+    </section>
   )
 }

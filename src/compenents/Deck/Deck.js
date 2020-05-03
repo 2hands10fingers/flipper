@@ -1,22 +1,13 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import CardAbstract from '../Card/CardAbstract'
+import HeroAbstract from '../Card/HeroAbstract'
 import Button from '../Assets/Button'
 import axios from 'axios'
 import csvParser from 'csv-parse'
 import DeckUpload from './DeckUpload';
 import RiskContainer from '../Assets/RiskContainer'
 
-
-/**
- * 1. CSV importation
- *  -- Eport import format from set settings
- * 2. Change integers to prototype without changing CSV
- */
-
- // 17 is greatest average
-
-
-function Deck(props) {
+export default function Deck(props) {
   const [risk, setRisk] = useState()
   const [discardPile, setDiscardPile] = useState([])
   const [cardPile, setCardPile] = useState([])
@@ -41,12 +32,10 @@ function Deck(props) {
     return (
       <Fragment>
         <div className="Deck">
-        {title && <h2 class="Deck--title">{title}</h2>}
+        {title && <h2 className="Deck--title">{title}</h2>}
         <p className="Deck--no-cards">No Cards</p>
-
-        {discardPile.length && ( <Button onClick={reshuffle}>Reshuffle</Button> )}
-
-        {!discardPile.length && ( <DeckUpload onChange={uploadHandler} /> )}
+        {discardPile.length > 0 && ( <Button onClick={reshuffle}>Reshuffle</Button> )}
+        {!discardPile.length > 0 && ( <DeckUpload onChange={uploadHandler} /> )}
         </div>
       </Fragment>
     )
@@ -55,33 +44,25 @@ function Deck(props) {
   if (tiled) {
     return (
     <Fragment>
-    {title && <h2 className="Deck--title">{title}</h2>}
-
-    <div className="Deck Deck--tiled">
-
-
-      {cardPile.length && cardPile.map( card => <CardAbstract card={card} />)}
-
+    <div className={`Deck Deck--tiled`}>
+      {title && <h2 className="Deck--title">{title}</h2>}
+      <div class="Deck--pile">
+        {cardPile.length > 0 &&
+        cardPile.map( (card,idx) => <HeroAbstract key={idx} card={card} />)}
+      </div>
     </div>
     </Fragment>
     )
   }
 
-
-
   return (
     <Fragment>
       <div className="Deck">
-
         {title && <h2 className="Deck--title">{title}</h2>}
         <CardAbstract card={currentCard}/>
-
         {risk && <p>{risk}</p>}
-
         <Button onClick={nextCardHandler}>Discard</Button>
-
         <RiskContainer onChange={setRisk} />
-
       </div>
     </Fragment>
   );
@@ -91,16 +72,17 @@ function uploadHandler(e) {
   const { type } = file
   let reader = new FileReader()
 
-  if (type === "application/json") {
-
-    reader.readAsText(file)
-    reader.onload = ()=> jsonUpload(reader.result)
-  }
-
-  if (type === "text/csv") {
-
-    reader.readAsBinaryString(file)
-    reader.onload = ()=> csvUpload(reader.result)
+  switch (type) {
+    case "application/json":
+      reader.readAsText(file)
+      reader.onload = ()=> jsonUpload(reader.result)
+    break
+    case "text/csv":
+      reader.readAsBinaryString(file)
+      reader.onload = ()=> csvUpload(reader.result)
+    break
+    default:
+    alert("File type not supported!")
   }
 }
 
@@ -119,7 +101,6 @@ function csvUpload(input) {
       let record
       // eslint-disable-next-line
       while (record = parser.read()) {
-
         output.push(record)
       }
     })
@@ -146,24 +127,24 @@ function reshuffle() {
 }
 
 function parseCSV(arr) {
-  let items = []
   const columns = arr[0]
+  const newItems = arr.reduce((items, row, idx)=>{
 
-  arr.forEach((row, idx) => {
+  if (idx !== 0) {
+    const cardData = row.reduce((acc, val, index)=> {
+    acc[columns[index]] = val
+      return acc
+    }, {})
 
-    if (idx !== 0) {
-      let cardData = {}
+    items.push(cardData)
+    return items
+  }
 
-      row.forEach((rowData, rowIdx) => {
-        cardData[columns[rowIdx]] = rowData
-      })
+  return items
 
-      items.push(cardData)
-    }
-  })
+  }, [])
 
-  return(items)
-
+  return(newItems)
 }
 
 function nextCardHandler() {
@@ -196,5 +177,3 @@ function nextCardHandler() {
       .catch( e => console.log(e))
   }
 }
-
-export default Deck;

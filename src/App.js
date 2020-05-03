@@ -6,17 +6,21 @@ export default function App(props) {
   const [decks, setDecks] = useState([])
   const [settings, setSettings] = useState({})
 
-
   return (
     <section id="app">
       <h1>Heist Meisters</h1>
       <Button onClick={addDeck} >Add Deck</Button>
-      <input type="checkbox" value={settings.tiled} name="tiled" onChange={addSettingHandler} />
-      <input type="text"  value={settings.title} name="title" onChange={addSettingHandler} />
+      <input
+        type="checkbox" value={settings.tiled}
+        name="tiled" onChange={addSettingHandler}
+      />
+      <input
+        type="text"  value={settings.title}
+        name="title" onChange={addSettingHandler}
+      />
       <section className="Decks">
-      {decks && decks.map( deck => (deck) )}
+        {decks && decks.map( deck => (deck) )}
       </section>
-
     </section>
   )
 
@@ -35,7 +39,7 @@ export default function App(props) {
 
 
   function addDeck() {
-    setDecks([...decks, <Deck key={decks.length} {...settings}/>])
+    setDecks([...decks, <Deck key={decks.length} {...settings} />])
     setSettings([])
   }
 }
